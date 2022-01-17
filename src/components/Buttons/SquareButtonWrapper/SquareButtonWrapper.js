@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './IconButton.module.scss'
+import styles from './SquareButtonWrapper.module.scss'
 
 const IconButton = ({ children, onClick, ...allProps }) => (
   <button type="button" className={styles.iconButton} onClick={onClick} {...allProps}>

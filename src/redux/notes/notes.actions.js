@@ -1,10 +1,13 @@
 import shortid from 'shortid'
 import { createAction } from '@reduxjs/toolkit'
 
-const addNote = createAction('notes/add', content => ({
+const addNote = createAction('notes/add', ({ name, category, message }) => ({
   payload: {
     id: shortid.generate(),
-    content,
+    name,
+    date: Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+    category,
+    content: message,
     completed: false,
   },
 }))

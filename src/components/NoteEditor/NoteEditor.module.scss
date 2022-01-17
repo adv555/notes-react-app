@@ -1,8 +1,24 @@
 .noteEditor {
   padding: 16px;
   border-radius: 4px;
+  opacity: 0.8;
 }
+.editorInput {
+  display: block;
+  margin-bottom: 4px;
+  min-height: 30px;
 
+  background: transparent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  // color: red;
+  opacity: 0.6; /* Firefox */
+}
 .nodoEditorTextarea {
   width: 100%;
 

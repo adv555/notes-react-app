@@ -9,8 +9,6 @@ import App from './App'
 import 'modern-normalize/modern-normalize.css'
 import './styles/base.scss'
 
-console.log(store)
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

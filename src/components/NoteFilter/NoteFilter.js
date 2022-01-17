@@ -15,7 +15,7 @@ const NoteFilter = () => {
       <input
         type="text"
         className={s.noteFilterInput}
-        placeholder="Filter your notes"
+        placeholder="Filter by content"
         value={value}
         onChange={e => dispatch(actions.changeFilter(e.target.value))}
       />
