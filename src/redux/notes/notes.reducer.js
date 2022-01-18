@@ -50,7 +50,7 @@ const initialState = [
   },
   {
     id: '6',
-    name: 'Task#1',
+    name: 'Just new task',
     created: 'May 15,2021',
     category: 'Task',
     content: 'Get ready for a new tasks',
