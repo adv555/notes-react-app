@@ -7,11 +7,9 @@ import actions from 'redux/notes/notes.actions'
 const NoteFilter = () => {
   const value = useSelector(getFilter)
   const dispatch = useDispatch()
-  console.log(value)
 
   return (
     <div className={s.noteFilter}>
-      {/* <p className={s.noteFilterLabel}>Filter your notes</p> */}
       <input
         type="text"
         className={s.noteFilterInput}

@@ -20,31 +20,42 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }))
 
-const NotesListArchived = () => {
+const NotesListArchived = ({ onNoteUpdate }) => {
   const notes = useSelector(getVisibleNotes)
 
   const dispatch = useDispatch()
 
-  console.log(notes)
-
   const onDeleteNote = id => dispatch(actions.deleteNote(id))
   const onToggleArchived = id => dispatch(actions.toggleArchived(id))
+
+  const onEdit = id => {
+    dispatch(actions.findNoteById(id))
+    onNoteUpdate()
+  }
 
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <NoteHeader Name={'Name'} Created={'Created'} Category={'Category'} Content={'Content'} />
+        <NoteHeader
+          Name={'Name'}
+          Created={'Created'}
+          Category={'Category'}
+          Content={'Content'}
+          Dates={'Dates'}
+        />
 
         <TableBody>
-          {notes.map(({ id, name, date, category, content, completed }) => (
+          {notes.map(({ id, name, created, category, content, dates, completed }) => (
             <StyledTableRow key={id}>
               {completed && (
                 <Note
                   name={name}
-                  date={date}
+                  created={created}
                   category={category}
                   text={content}
+                  dates={dates}
                   completed={completed}
+                  onEdit={() => onEdit(id)}
                   onToggle={() => onToggleArchived(id)}
                   onDelete={() => onDeleteNote(id)}
                 />
