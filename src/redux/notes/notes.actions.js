@@ -1,13 +1,15 @@
 import shortid from 'shortid'
+import dayjs from 'dayjs'
 import { createAction } from '@reduxjs/toolkit'
 
-const addNote = createAction('notes/add', ({ name, category, message }) => ({
+const addNote = createAction('notes/add', ({ name, category, message, dates }) => ({
   payload: {
     id: shortid.generate(),
     name,
-    date: Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+    date: dayjs().format('YYYY-MM-DD HH:mm:ss'),
     category,
     content: message,
+    // dates,
     completed: false,
   },
 }))

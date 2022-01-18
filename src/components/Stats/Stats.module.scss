@@ -9,6 +9,7 @@
   flex-direction: column;
   margin: 0;
   text-align: center;
+  color: rgba(0, 0, 0, 0.7);
 
   &:not(:last-child) {
     margin-right: 15px;
@@ -18,6 +19,7 @@
 .statsValue {
   font-size: 32px;
   font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .statsLabel {
