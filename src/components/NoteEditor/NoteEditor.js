@@ -7,6 +7,7 @@ export default function NoteEditor({ onSave }) {
   const [name, setName] = useState('')
   const [category, setCategory] = useState('')
   const [message, setMessage] = useState('')
+  // const [dates, setDates] = useState([])
 
   const dispatch = useDispatch()
 

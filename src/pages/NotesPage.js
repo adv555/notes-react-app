@@ -4,6 +4,7 @@ import Section from 'components/Section'
 import Modal from 'components/Modal'
 import NoteEditor from 'components/NoteEditor'
 import NoteList from 'components/NoteList'
+import NotesListArchived from 'components/NoteListArchived'
 import Filter from 'components/NoteFilter'
 import Stats from 'components/Stats'
 import AddButton from 'components/Buttons/AddButton'
@@ -24,7 +25,12 @@ export default function NotesPage() {
         <AddButton onClick={toggleModal} />
       </Section>
 
-      <NoteList />
+      <Section>
+        <NoteList />
+      </Section>
+      <Section title={'Archived notes'}>
+        <NotesListArchived />
+      </Section>
 
       {showModal && (
         <Modal onClose={toggleModal}>
