@@ -34,6 +34,8 @@ export default function Modal({ children, onClose }) {
   )
 }
 
+// Modal as a Class Component
+
 // export default class Modal extends Component {
 //   componentDidMount() {
 //     window.addEventListener('keydown', this.handleKeyDown)

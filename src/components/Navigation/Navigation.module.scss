@@ -1,13 +1,57 @@
 .link {
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
   padding: 12px;
   font-weight: 500;
-  color: #2a363b;
+  color: #465298;
   font-size: 18px;
 }
-
-.activeLink {
-  /* composes: link; */
+#465298 .activeLink {
   color: #2196f3;
+}
+.box {
+  display: flex;
+  margin: 0;
+  margin-left: 15px;
+  font-style: normal;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #465298;
+}
+.box .span {
+  display: flex;
+  padding-bottom: 20px;
+  color: #43a047;
+  border-bottom: 3px solid #43a047;
+  border-radius: 18px;
+  transition: border-radius 0.2s ease-in;
+}
+.box:hover span {
+  border-radius: 28px;
+}
+.box .eye {
+  position: relative;
+  height: 40px;
+  display: block;
+  background: #fff;
+  margin: -5px 3px;
+
+  border-radius: 50%;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5), inset 0 0 5px #465298, inset 0 0 15px #465298;
+}
+
+.box .eye::before {
+  content: '';
+  position: absolute;
+  top: 64%;
+  left: 14px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #000;
+
+  border: 2px solid #43a047;
+  box-sizing: border-box;
 }
