@@ -1,0 +1,60 @@
+.noteEditor {
+  padding: 16px;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+.editorInput {
+  display: block;
+  margin-bottom: 4px;
+  min-height: 30px;
+
+  background: transparent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+}
+::placeholder {
+  opacity: 0.6;
+}
+.nodoEditorTextarea {
+  width: 100%;
+
+  line-height: 16px;
+
+  height: 160px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font: inherit;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+
+  resize: none;
+  margin-bottom: 12px;
+}
+
+.noteEditorBtn {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+
+  width: 100%;
+  margin-left: auto;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background-color: #3f51b5;
+  color: #fff;
+  font-weight: 500;
+
+  &:hover,
+  &:focus {
+    background-color: #303f9f;
+  }
+
+  &:active {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
