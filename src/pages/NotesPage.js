@@ -26,10 +26,10 @@ export default function NotesPage() {
       </Section>
 
       <Section>
-        <NoteList />
+        <NoteList onNoteUpdate={toggleModal} />
       </Section>
       <Section title={'Archived notes'}>
-        <NotesListArchived />
+        <NotesListArchived onNoteUpdate={toggleModal} />
       </Section>
 
       {showModal && (

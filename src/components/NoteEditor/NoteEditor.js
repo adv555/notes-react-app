@@ -1,18 +1,22 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import actions from 'redux/notes/notes.actions'
+import { getNoteById } from 'redux/notes/notes.selectors'
 import s from './NoteEditor.module.scss'
 
 export default function NoteEditor({ onSave }) {
-  const [name, setName] = useState('')
-  const [category, setCategory] = useState('')
-  const [message, setMessage] = useState('')
-  // const [dates, setDates] = useState([])
-
+  const note = useSelector(getNoteById)
   const dispatch = useDispatch()
 
+  const id = note.map(el => el.id).toString()
+  const prevNote = note.map(el => el.name).toString()
+  const prevMessage = note.map(el => el.content).toString()
+
+  const [name, setName] = useState(prevNote || '')
+  const [category, setCategory] = useState('')
+  const [message, setMessage] = useState(prevMessage || '')
+
   const handleChange = e => {
-    // setMessage(e.target.value)
     const { name, value } = e.currentTarget
     switch (name) {
       case 'name':
@@ -35,16 +39,18 @@ export default function NoteEditor({ onSave }) {
     if (message === '') {
       return alert('Fill in the note.')
     }
-
-    dispatch(actions.addNote({ name, category, message }))
-    onSave()
+    !id
+      ? dispatch(actions.addNote({ name, category, message }))
+      : dispatch(actions.updateNote({ id, name, category, message }))
     reset()
+    onSave()
   }
 
   const reset = () => {
     setName('')
     setCategory('')
     setMessage('')
+    dispatch(actions.findNoteById(null))
   }
 
   return (
@@ -55,10 +61,9 @@ export default function NoteEditor({ onSave }) {
         name="name"
         placeholder="Name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        // title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+        title="The name can only consist of letters, apostrophe, dashes, and spaces."
         required
         value={name}
-        // id={nameInputId}
         onChange={handleChange}
       />
       <select
