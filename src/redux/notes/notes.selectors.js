@@ -15,3 +15,29 @@ export const getVisibleNotes = state => {
 
   return notes.filter(({ content }) => content.toLowerCase().includes(normalizedFilter))
 }
+
+export const getStatistics = state => {
+  const notes = getNotes(state)
+  const statistics = notes.reduce((stats, note) => {
+    const category = stats.find(stat => stat.category.toLowerCase() === note.category.toLowerCase())
+    if (!category) {
+      return [
+        ...stats,
+        {
+          category: note.category,
+          active: note.completed ? 1 : 0,
+          completed: note.completed ? 0 : 1,
+          total: 1,
+        },
+      ]
+    }
+    note.completed ? category.completed++ : category.active++
+    category.total += 1
+
+    console.log(stats)
+
+    return stats
+  }, [])
+
+  return statistics
+}

@@ -6,7 +6,7 @@ const initialState = [
   {
     id: '1',
     name: 'Shopping list',
-    created: 'April 27,2021',
+    created: 'April 27,2022',
     category: 'Task',
     content: 'tomato, apple, juice',
     dates: [],
@@ -15,7 +15,7 @@ const initialState = [
   {
     id: '2',
     name: 'The theory of evolution',
-    created: 'April 27,2021',
+    created: 'April 27,2022',
     category: 'Random Thought',
     content: 'need to purchase',
     dates: [],
@@ -33,7 +33,7 @@ const initialState = [
   {
     id: '4',
     name: 'William Gadis',
-    created: 'May 07,2021',
+    created: 'May 07,2022',
     category: 'Random Thought',
     content: 'deadline 05-06-2021',
     dates: ['05-06-2021'],
@@ -42,7 +42,7 @@ const initialState = [
   {
     id: '5',
     name: 'Books',
-    created: 'May 15,2021',
+    created: 'May 15,2022',
     category: 'Random Thought',
     content: "Don't forget to read if you bought",
     dates: [],
@@ -51,7 +51,7 @@ const initialState = [
   {
     id: '6',
     name: 'Just new task',
-    created: 'May 15,2021',
+    created: 'May 15,2022',
     category: 'Task',
     content: 'Get ready for a new tasks',
     dates: [],
@@ -60,10 +60,10 @@ const initialState = [
   {
     id: '7',
     name: 'Random Thought',
-    created: 'May 15,2021',
+    created: 'May 15,2022',
     category: 'Idea',
-    content: 'Create somethig...',
-    dates: [],
+    content: 'Create something... 20-02-2022',
+    dates: ['20-02-2022'],
     completed: false,
   },
 ]

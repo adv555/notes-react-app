@@ -7,7 +7,7 @@ const addNote = createAction('notes/add', ({ name, category, message }) => ({
   payload: {
     id: shortid.generate(),
     name,
-    created: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+    created: dayjs().format('MMMM D, YYYY'),
     category,
     content: message,
     dates: getDateFromContent(message),

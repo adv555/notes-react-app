@@ -8,6 +8,7 @@ import NotesListArchived from 'components/NoteListArchived'
 import Filter from 'components/NoteFilter'
 import Stats from 'components/Stats'
 import AddButton from 'components/Buttons/AddButton'
+import { Statistics } from 'components/Statistics'
 
 export default function NotesPage() {
   const [showModal, setShowModal] = useState(false)
@@ -27,6 +28,9 @@ export default function NotesPage() {
 
       <Section>
         <NoteList onNoteUpdate={toggleModal} />
+      </Section>
+      <Section title={'Notes statistics'}>
+        <Statistics />
       </Section>
       <Section title={'Archived notes'}>
         <NotesListArchived onNoteUpdate={toggleModal} />
