@@ -34,8 +34,6 @@ export const getStatistics = state => {
     note.completed ? category.completed++ : category.active++
     category.total += 1
 
-    console.log(stats)
-
     return stats
   }, [])
 

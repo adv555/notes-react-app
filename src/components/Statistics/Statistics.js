@@ -21,7 +21,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export function Statistics() {
   const statistics = useSelector(getStatistics)
-  console.log(statistics)
 
   return (
     <TableContainer component={Paper}>
