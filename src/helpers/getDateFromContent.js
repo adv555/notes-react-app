@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const getDateFromContent = text => {
   let results = text.match(/[0-9]{1,2}([\-\/ \.])[0-9]{1,2}([\-\/ \.])((19)|(20))[0-9]{2}/g)
 
